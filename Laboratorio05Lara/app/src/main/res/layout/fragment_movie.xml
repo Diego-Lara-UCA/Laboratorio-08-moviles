@@ -4,6 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.movie.MovieFragment"
     >
+
+    <data>
+        <variable
+            name="movieviewmodel"
+            type="com.example.laboratorio05lara.ui.movie.viewmodel.MovieViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -33,7 +40,7 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Star Wars episodio 3: La venganza de los Sith"
+            android:text="@{movieviewmodel.name}"
             android:textColor="@color/white"
             android:textSize="18dp"
             android:textStyle="bold"
@@ -56,7 +63,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ciencia ficción"
+                android:text="@{movieviewmodel.category}"
                 android:textSize="24dp"
                 android:layout_weight="1"
                 android:textColor="@color/white"
@@ -70,14 +77,14 @@
                 android:textSize="24dp"
                 android:textStyle="bold"
                 android:textColor="@color/calification"
-                android:text="9.8"/>
+                android:text="@{movieviewmodel.qualification}"/>
         </LinearLayout>
 
         <TextView
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, "
+            android:text="@{movieviewmodel.description}"
             android:textSize="12dp"
             android:paddingRight="10dp"
             android:paddingLeft="10dp"
