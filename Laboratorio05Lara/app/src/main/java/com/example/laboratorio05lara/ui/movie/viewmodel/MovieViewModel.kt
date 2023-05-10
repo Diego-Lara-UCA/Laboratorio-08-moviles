@@ -17,7 +17,6 @@ class MovieViewModel(private val repository: MovieRepository):ViewModel() {
     var status = MutableLiveData("")
 
     fun getMovies() = repository.getMovies()
-
     fun addMovies(movie: MovieModel) = repository.addMovie(movie)
 
     private fun validateData(): Boolean{
@@ -56,6 +55,13 @@ class MovieViewModel(private val repository: MovieRepository):ViewModel() {
         category.value = ""
         description.value = ""
         qualification.value = ""
+    }
+
+    fun setSelectedMovie(movie: MovieModel){
+        name.value = movie.name
+        category.value = movie.category
+        description.value = movie.description
+        qualification.value = movie.qualification
     }
 
     companion object{
